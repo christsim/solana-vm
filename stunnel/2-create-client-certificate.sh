@@ -39,8 +39,12 @@ openssl genrsa -out "${CLIENT_CERT_DIR}/client_${CLIENTID}.key" 4096
 # Create a certificate signing request (CSR) for the client without prompts
 openssl req -new -key "${CLIENT_CERT_DIR}/client_${CLIENTID}.key" -out "${CLIENT_CERT_DIR}/client_${CLIENTID}.csr" -subj "/CN=${CLIENTID}"
 
-# Sign the client CSR with the CA, valid for 365 days
-openssl x509 -req -days 365 -in "${CLIENT_CERT_DIR}/client_${CLIENTID}.csr" -CA "${HOSTNAME}_certs/ca/${HOSTNAME}_ca.pem" -CAkey "${HOSTNAME}_certs/ca/${HOSTNAME}_ca.key" -set_serial "${CLIENTID}" -out "${CLIENT_CERT_DIR}/client_${CLIENTID}.pem"
+# Sign the client CSR with the CA, valid for 7300 days
+openssl x509 -req -days 7300 -in "${CLIENT_CERT_DIR}/client_${CLIENTID}.csr" -CA "${HOSTNAME}_certs/ca/${HOSTNAME}_ca.pem" -CAkey "${HOSTNAME}_certs/ca/${HOSTNAME}_ca.key" -set_serial "${CLIENTID}" -out "${CLIENT_CERT_DIR}/client_${CLIENTID}.pem"
 
 # Cleanup: Remove the client CSR file
 rm "${CLIENT_CERT_DIR}/client_${CLIENTID}.csr"
+
+
+echo Verifying client pem
+openssl verify -CAfile "${HOSTNAME}_certs/ca/${HOSTNAME}_ca.pem" "${CLIENT_CERT_DIR}/client_${CLIENTID}.pem"
