@@ -15,10 +15,6 @@ usermod -aG solana solana
 usermod -aG solana $SUDO_USER
 usermod -aG systemd-journal $SUDO_USER
 
-# refresh the groups
-newgrp solana
-newgrp systemd-journal
-
 # Create Solana data directory
 mkdir -pv /opt/solana
 # Create directory for ledger
