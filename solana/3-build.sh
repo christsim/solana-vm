@@ -1,6 +1,12 @@
 #!/bin/bash -xe
 
-VERSION=v1.16.19
+VERSION=$1
+
+if [ -z "$VERSION" ]; then
+    echo "Please enter the Solana version number (e.g., v1.16.19):"
+    echo "usage $0 [version]"
+    exit 1
+fi
 
 echo attempting to build Version $VERSION
 
