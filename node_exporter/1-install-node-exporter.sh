@@ -58,7 +58,7 @@ After=network-online.target
 User=node_exporter
 Group=node_exporter
 Type=simple
-ExecStart=/usr/local/bin/node_exporter --web.listen-address=127.0.0.1:9100 --web.telemetry-path=/metrics
+ExecStart=/usr/local/bin/node_exporter --web.listen-address=127.0.0.1:9100 --web.telemetry-path=/metrics --collector.processes --collector.systemd
 
 [Install]
 WantedBy=multi-user.target
