@@ -58,6 +58,15 @@ cert = /etc/stunnel/server.pem
 key = /etc/stunnel/server.key
 CAfile = /etc/stunnel/ca.pem
 verify = 2
+
+[prometheus]
+client = no
+accept = 0.0.0.0:19100
+connect = 127.0.0.1:9100
+cert = /etc/stunnel/server.pem
+key = /etc/stunnel/server.key
+CAfile = /etc/stunnel/ca.pem
+verify = 2
 EOF
 
 # Restart stunnel service
