@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # View Logs
-journalctl -u agave-validator.service -f
+journalctl -u solana-validator.service -f

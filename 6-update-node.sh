@@ -10,7 +10,7 @@ fi
 
 # Start the Service
 echo "stopping the solana service"
-systemctl stop agave-validator.service
+systemctl stop solana-validator.service
 
 #Build
 
@@ -18,4 +18,4 @@ systemctl stop agave-validator.service
 
 # Start the Service
 echo "starting the solana service"
-systemctl start agave-validator.service
+systemctl start solana-validator.service

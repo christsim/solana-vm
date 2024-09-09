@@ -60,9 +60,9 @@ tee /usr/local/bin/start-solana.sh > /dev/null <<EOF
 EOF
 
 # Create a Systemd Service File
-tee /etc/systemd/system/agave-validator.service > /dev/null <<EOF
+tee /etc/systemd/system/solana-validator.service > /dev/null <<EOF
 [Unit]
-Description=Agave Validator
+Description=Solana Validator
 After=network.target
 [Service]
 Type=simple
@@ -81,7 +81,7 @@ chmod +x /usr/local/bin/start-solana.sh
 systemctl daemon-reload
 
 # Enable the Service
-systemctl enable agave-validator.service
+systemctl enable solana-validator.service
 
 echo solana service created
 echo ..

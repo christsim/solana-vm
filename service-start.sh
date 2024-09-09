@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Start the Service
-systemctl start agave-validator.service
+systemctl start solana-validator.service
 
