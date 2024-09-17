@@ -49,10 +49,10 @@ sudo rm -f "/usr/local/bin/agave-validator"
 sudo rm -f "/usr/local/bin/solana"
 sudo rm -f "/usr/local/bin/solana-keygen"
 
+#Granting binary permissions
+sudo chown -R solana:solana-users /opt/solana/build
+
 # Move Binaries to /usr/local
 sudo ln -s /opt/solana/build/$VERSION/target/release/agave-validator /usr/local/bin/agave-validator
 sudo ln -s /opt/solana/build/$VERSION/target/release/solana /usr/local/bin/solana
 sudo ln -s /opt/solana/build/$VERSION/target/release/solana-keygen /usr/local/bin/solana-keygen
-
-#Granting binary permissions
-sudo chown -R :solana-users /opt/solana/build
