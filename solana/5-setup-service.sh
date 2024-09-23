@@ -25,7 +25,7 @@ echo "vm.max_map_count=1000000" | tee -a /etc/sysctl.conf
 tee /usr/local/bin/start-solana.sh > /dev/null <<EOF
 #!/bin/bash
 
-/usr/local/bin/solana-validator \
+/usr/local/bin/agave-validator \
     --enable-extended-tx-metadata-storage \
     --no-voting \
     --no-port-check \
@@ -47,13 +47,16 @@ tee /usr/local/bin/start-solana.sh > /dev/null <<EOF
     --known-validator Ninja1spj6n9t5hVYgF3PdnYz2PLnkt7rvaw3firmjs \
     --known-validator 7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2 \
     --wal-recovery-mode skip_any_corrupted_record \
+    --only-known-rpc \
     --ledger /opt/solana/ledger \
     --limit-ledger-size 520000000 \
     --rpc-bind-address 127.0.0.1 \
     --rpc-port 8899 \
     --private-rpc \
     --enable-rpc-transaction-history \
-    --full-rpc-api
+    --full-rpc-api \
+    --accounts /opt/solana-accounts \
+    --minimal-snapshot-download-speed 250000000
 EOF
 
 # Create a Systemd Service File
