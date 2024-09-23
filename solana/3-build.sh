@@ -36,7 +36,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --profile m
 source $HOME/.cargo/env
 
 # Clone the Solana repository and build from source
-git clone https://github.com/solana-labs/solana.git /opt/solana/build/$VERSION
+git clone https://github.com/anza-xyz/agave.git /opt/solana/build/$VERSION
 cd /opt/solana/build/$VERSION
 git fetch
 git checkout $VERSION
@@ -44,12 +44,14 @@ git checkout $VERSION
 # Build Solana
 cargo build --release
 
+sudo chown -R solana:solana-users /opt/solana/build
+
 # remove previous versions
-sudo rm -f "/usr/local/bin/solana-validator"
+sudo rm -f "/usr/local/bin/agave-validator"
 sudo rm -f "/usr/local/bin/solana"
 sudo rm -f "/usr/local/bin/solana-keygen"
 
 # Move Binaries to /usr/local
-sudo ln -s /opt/solana/build/$VERSION/target/release/solana-validator /usr/local/bin/solana-validator
+sudo ln -s /opt/solana/build/$VERSION/target/release/agave-validator /usr/local/bin/agave-validator
 sudo ln -s /opt/solana/build/$VERSION/target/release/solana /usr/local/bin/solana
 sudo ln -s /opt/solana/build/$VERSION/target/release/solana-keygen /usr/local/bin/solana-keygen
