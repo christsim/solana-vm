@@ -9,18 +9,6 @@ fi
 
 echo running as sudo: $SUDO_USER
 
-# Setup system settings for Solana
-sysctl -w net.core.rmem_max=134217728
-sysctl -w net.core.rmem_default=134217728
-sysctl -w net.core.wmem_max=134217728
-sysctl -w net.core.wmem_default=134217728
-sysctl -w vm.max_map_count=1000000
-echo "net.core.rmem_max=134217728" | tee -a /etc/sysctl.conf
-echo "net.core.rmem_default=134217728" | tee -a /etc/sysctl.conf
-echo "net.core.wmem_max=134217728" | tee -a /etc/sysctl.conf
-echo "net.core.wmem_default=134217728" | tee -a /etc/sysctl.conf
-echo "vm.max_map_count=1000000" | tee -a /etc/sysctl.conf
-
 ## Create a script in /usr/local/bin called start-solana.sh
 tee /usr/local/bin/start-solana.sh > /dev/null <<EOF
 #!/bin/bash
