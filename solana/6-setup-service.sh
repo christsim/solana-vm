@@ -44,7 +44,7 @@ tee /usr/local/bin/start-solana.sh > /dev/null <<EOF
     --full-rpc-api \
     --minimal-snapshot-download-speed 250000000 \
     --maximum-full-snapshots-to-retain 1 \
-    --maximum-incremental-snapshots-to-retain 1
+    --maximum-incremental-snapshots-to-retain 1 \
     --ledger /opt/solana/ledger \
     --accounts /opt/solana/accounts \
     --snapshots /opt/solana/snapshots
