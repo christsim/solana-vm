@@ -36,15 +36,18 @@ tee /usr/local/bin/start-solana.sh > /dev/null <<EOF
     --known-validator 7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2 \
     --wal-recovery-mode skip_any_corrupted_record \
     --only-known-rpc \
-    --ledger /opt/solana/ledger \
     --limit-ledger-size 520000000 \
     --rpc-bind-address 127.0.0.1 \
     --rpc-port 8899 \
     --private-rpc \
     --enable-rpc-transaction-history \
     --full-rpc-api \
-    --accounts /opt/solana-accounts \
-    --minimal-snapshot-download-speed 250000000
+    --minimal-snapshot-download-speed 250000000 \
+    --maximum-full-snapshots-to-retain 1 \
+    --maximum-incremental-snapshots-to-retain 1
+    --ledger /opt/solana/ledger \
+    --accounts /opt/solana/accounts \
+    --snapshots /opt/solana/snapshots
 EOF
 
 # Create a Systemd Service File

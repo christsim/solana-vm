@@ -17,7 +17,5 @@ mdadm --create --force /dev/md0 --level=0 --raid-devices=8 \
 # Format the RAID array to ext4
 mkfs.ext4 -F /dev/md0
 
-mkdir -pv /opt/solana
-
 # mount the disk
-sudo mount /dev/md0 /opt/solana
+sudo mount /dev/md0 /opt/solana-ledger
