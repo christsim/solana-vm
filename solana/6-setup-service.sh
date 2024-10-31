@@ -76,4 +76,4 @@ systemctl enable solana-validator.service
 
 echo solana service created
 echo ..
-echo run ./start-service.sh to start.
+echo run ./service-start.sh to start.
