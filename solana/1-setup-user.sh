@@ -10,16 +10,9 @@ fi
 echo running as sudo: $SUDO_USER
 
 useradd -r -s /bin/false solana
+groupadd "solana-users"
 
 usermod -aG solana solana
 usermod -aG solana $SUDO_USER
 usermod -aG systemd-journal $SUDO_USER
-
-# Create Solana data directory
-mkdir -pv /opt/solana
-# Create directory for ledger
-mkdir -p /opt/solana/ledger
-
-chown -R solana:solana /opt/solana
-chmod -R 775 /opt/solana
 
