@@ -18,4 +18,4 @@ mdadm --create --force /dev/md0 --level=0 --raid-devices=8 \
 mkfs.ext4 -F /dev/md0
 
 # mount the disk
-sudo mount /dev/md0 /opt/solana-ledger
+sudo mount /dev/md0 /opt/solana/ledger

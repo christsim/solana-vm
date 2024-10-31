@@ -21,11 +21,11 @@ sudo mkdir -pv /mnt/disk2/solana-accounts
 sudo chown solana:solana -R /mnt/disk2/solana-accounts
 sudo chmod 0775 -R /mnt/disk2/solana-accounts
 
-# mount /mnt/disk2/solana-accounts unto /opt/solana-accounts
-sudo mkdir -pv /opt/solana-accounts
-sudo mount --bind /mnt/disk2/solana-accounts /opt/solana-accounts
+# mount /mnt/disk2/solana-accounts unto /opt/solana/accounts
+sudo mkdir -pv /opt/solana/accounts
+sudo mount --bind /mnt/disk2/solana-accounts /opt/solana/accounts
 
 # add mounts to fstab
 sudo cp /etc/fstab /etc/fstab.bak
 echo "/dev/md1 /mnt/disk2 ext4 defaults 0 0" | sudo tee -a /etc/fstab
-echo "/mnt/disk2/solana-accounts /opt/solana-accounts none bind 0 0" | sudo tee -a /etc/fstab
+echo "/mnt/disk2/solana-accounts /opt/solana/accounts none bind 0 0" | sudo tee -a /etc/fstab
