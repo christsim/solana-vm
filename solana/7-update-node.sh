@@ -16,9 +16,6 @@ systemctl stop solana-validator.service
 
 ./4-build.sh $VERSION
 
-#Granting binary file with permission
-chmod -R 755 /opt/solana/build/$VERSION
-
 # Start the Service
 echo "starting the solana service"
 systemctl start solana-validator.service
