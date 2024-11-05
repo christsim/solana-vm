@@ -8,6 +8,7 @@
 
 SSH_KEYS=(
     #   "ssh-rsa AAAAB3NzaC1yc3... alice"
+    #   "ssh-rsa AAAAB3NzaC1yc2... bob"
 )
 
 # Logging function
