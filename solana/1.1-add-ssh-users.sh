@@ -7,7 +7,6 @@
 # 3. The user's name (e.g., "bob") - this will be used to create the user's home directory
 
 SSH_KEYS=(
-       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDRpnqZEtm/h5ZHVnDjDvr8HfX8yxHD6syWYMMjR+1pmbV3/ekR0ytnQJab/ZmsbI6nvel3Y3icjO03RlfDlvTITNtUyxrvjI+4etEg2VPPZAMs3JQi+ZrzrTS5RGkVI9ZbAaV6xIM9HbGwNZ+1EfeMPuqTbob+e+VNIeiJatDtQ3TcOtz1yxNfmcbgg9dshvtx6AeODJ7w6xeK4+1ZP79v2PR4Tz8qgzL8bhWKEmgYooM357T+FV3d7jRNfVPfwAIIMqYuWLesi6KWOcQ1DImBOhp63XHV4rcOhXH7FJg5MaUsdeOXVAnxvOsHF+esPHAt9oP1ejiibhr+PvKxzkNkZQfzIjqXY6OfovfwoYpVK9oRsNNC0yaeCNjtHVBD3aNiMaD/2YoK3rwHJUtwY2f76JnDLc564YIQ/+ru0H0MOhnY0M0uc9tr1nV2PUDk+6CxCo4/0FTe/XYYCc1jS6yHxR+iGLAK6eeEQV2nvqQKqBiwJbuKZ54Dg9U5oqAPIHU= bertus"
     #   "ssh-rsa AAAAB3NzaC1yc3... alice"
 )
 
