@@ -15,18 +15,18 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 # Install necessary dependencies
-sudo apt-get install -y git build-essential pkg-config libssl-dev libudev-dev libclang-dev llvm byobu
+sudo apt-get install -y git build-essential pkg-config libssl-dev libudev-dev libclang-dev llvm byobu protobuf-compiler
 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig/libudev.pc
-export LIBCLANG_PATH=/usr/lib/llvm-14/lib/libclang.so
+export LIBCLANG_PATH=/usr/lib/llvm-18/lib/libclang.so
 
 if [ ! -f "/usr/lib/x86_64-linux-gnu/pkgconfig/libudev.pc" ]; then
     echo "File does not exist: /usr/lib/x86_64-linux-gnu/pkgconfig/libudev.pc"
     exit 1  # Exit with a non-zero status to indicate an error
 fi
 
-if [ ! -f "/usr/lib/llvm-14/lib/libclang.so" ]; then
-    echo "File does not exist: /usr/lib/llvm-14/lib/libclang.so"
+if [ ! -f "/usr/lib/llvm-18/lib/libclang.so" ]; then
+    echo "File does not exist: /usr/lib/llvm-18/lib/libclang.so"
     exit 1  # Exit with a non-zero status to indicate an error
 fi
 
@@ -45,6 +45,7 @@ git checkout $VERSION
 cargo build --release
 
 sudo chown -R solana:solana-users /opt/solana/build
+chmod -R 755 /opt/solana/build/$VERSION 
 
 # remove previous versions
 sudo rm -f "/usr/local/bin/agave-validator"

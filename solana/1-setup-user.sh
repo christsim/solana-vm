@@ -15,4 +15,4 @@ groupadd "solana-users"
 usermod -aG solana solana
 usermod -aG solana $SUDO_USER
 usermod -aG systemd-journal $SUDO_USER
-
+usermod -aG solana-users solana

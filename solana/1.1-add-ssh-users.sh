@@ -7,7 +7,6 @@
 # 3. The user's name (e.g., "bob") - this will be used to create the user's home directory
 
 SSH_KEYS=(
-    #   "ssh-rsa AAAAB3NzaC1yc2... bob"
     #   "ssh-rsa AAAAB3NzaC1yc3... alice"
 )
 
