@@ -9,7 +9,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-SSH_KEYS=($(cat "$1"))
+# load the file
+mapfile -t SSH_KEYS < "$1"
 
 log() {
     echo "$(date +'%Y-%m-%d %H:%M:%S') - $1"
